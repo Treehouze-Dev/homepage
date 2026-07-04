@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-bg: #FFFFFF;
+  --color-ink: #0D0D0B;
+  --color-muted: #6B6863;
+  --color-forest: #1B3A2B;
+  --color-forest-light: #EBF0EC;
+  --color-edge: #E2E2DE;
+  --color-card: #FFFFFF;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #0D0D0B;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #1B3A2B;
+  color: #FFFFFF;
+}
+
+/* Blog article prose */
+.prose-treehouze {
+  color: #0D0D0B;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-treehouze p {
+  margin-bottom: 1.5rem;
+}
+.prose-treehouze h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0D0D0B;
+  margin-top: 2.5rem;
+  margin-bottom: 0.875rem;
+}
+.prose-treehouze h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0D0D0B;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-treehouze strong {
+  font-weight: 600;
+  color: #0D0D0B;
+}
+.prose-treehouze ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.prose-treehouze ul li {
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: #6B6863;
+}
+.prose-treehouze ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.625rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background-color: #1B3A2B;
+}
+.prose-treehouze ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.prose-treehouze ol li {
+  margin-bottom: 0.5rem;
+  color: #6B6863;
+}
+.prose-treehouze blockquote {
+  border-left: 3px solid #1B3A2B;
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  color: #6B6863;
+  font-style: italic;
+}
+.prose-treehouze a {
+  color: #1B3A2B;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-treehouze a:hover {
+  color: #0D0D0B;
 }

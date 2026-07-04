@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 562 621" width="562" height="621" role="img" aria-label="Treehouze Logo">
+  <g fill="#1B3A2B" stroke="#1B3A2B" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="281" y1="84"  x2="281" y2="581"/>
+    <line x1="84"  y1="156" x2="478" y2="157"/>
+    <line x1="84"  y1="156" x2="281" y2="371"/>
+    <line x1="478" y1="157" x2="281" y2="371"/>
+    <circle cx="281" cy="84"  r="44"/>
+    <circle cx="84"  cy="156" r="44"/>
+    <circle cx="478" cy="157" r="44"/>
+    <circle cx="281" cy="371" r="44"/>
+  </g>
+</svg>

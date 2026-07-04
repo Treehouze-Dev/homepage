@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 562 621" width="562" height="621" role="img" aria-label="Treehouze Logo">
+  <!-- Logo color: einfach 'fill' unten ändern (#ffffff = weiß, #000000 = schwarz) -->
+  <g fill="#ffffff" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Verbindungslinien -->
+    <line x1="281" y1="84"  x2="281" y2="581"/>   <!-- vertikale Achse: Top-Knoten durch Mitte bis Stamm-Ende -->
+    <line x1="84"  y1="156" x2="478" y2="157"/>   <!-- horizontaler Balken: links–rechts -->
+    <line x1="84"  y1="156" x2="281" y2="371"/>   <!-- Diagonale links → Apex -->
+    <line x1="478" y1="157" x2="281" y2="371"/>   <!-- Diagonale rechts → Apex -->
+    <!-- Knotenpunkte -->
+    <circle cx="281" cy="84"  r="44"/>            <!-- oben -->
+    <circle cx="84"  cy="156" r="44"/>            <!-- links -->
+    <circle cx="478" cy="157" r="44"/>            <!-- rechts -->
+    <circle cx="281" cy="371" r="44"/>            <!-- Apex / unten -->
+  </g>
+</svg>
