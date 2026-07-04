@@ -8,8 +8,8 @@ const PRODUCT_LINKS = [
 ];
 
 const LEGAL_LINKS = [
-  { label: "Privacy", href: "#" },
-  { label: "Impressum", href: "#" },
+  { label: "Datenschutz", href: "/datenschutz" },
+  { label: "Impressum", href: "/impressum" },
 ];
 
 const SOCIAL_LINKS = [
