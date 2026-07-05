@@ -3,6 +3,44 @@
 import fs from "fs";
 import path from "path";
 
+export type WaitlistState =
+  | { status: "idle" }
+  | { status: "success" }
+  | { status: "error"; message: string };
+
+export async function submitWaitlist(
+  _prev: WaitlistState,
+  formData: FormData
+): Promise<WaitlistState> {
+  const email = (formData.get("email") as string)?.trim();
+  const city = (formData.get("city") as string)?.trim();
+
+  if (!email) return { status: "error", message: "Bitte gib deine E-Mail-Adresse ein." };
+
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) return { status: "error", message: "Bitte gib eine gültige E-Mail-Adresse ein." };
+
+  const resendKey = process.env.RESEND_API_KEY;
+  if (resendKey) {
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "Treehouze <noreply@treehouze.de>",
+        to: ["hello@treehouze.de"],
+        reply_to: email,
+        subject: `City Companion Waitlist — ${email}`,
+        html: `<h2>New City Companion waitlist signup</h2><p><strong>Email:</strong> ${email}</p>${city ? `<p><strong>City:</strong> ${city}</p>` : ""}`,
+      }),
+    });
+  }
+
+  return { status: "success" };
+}
+
 export type BookingState =
   | { status: "idle" }
   | { status: "success" }
